@@ -1,0 +1,108 @@
+{
+  "title": "视频项目交付看板",
+  "surface": "dashboard",
+  "status": "reviewed",
+  "buildStatus": "complete",
+  "filters": [],
+  "queries": {
+    "confirmed_delivery": {
+      "rows": [
+        {
+          "cumulative": 7551,
+          "remotion": 1325,
+          "threejs": 4594,
+          "blender": 1200,
+          "cad": 432,
+          "checkedAt": "2026-11-26T14:59:00+08:00"
+        }
+      ],
+      "source": {
+        "metricDefinitions": [
+          {
+            "label": "累计交付",
+            "definition": "按项目去重后的已核验交付总数。",
+            "componentIds": [
+              "confirmed-cumulative"
+            ]
+          },
+          {
+            "label": "累计交付技术栈项目数",
+            "definition": "按技术栈统计的项目个数。",
+            "componentIds": [
+              "confirmed-cumulative"
+            ]
+          },
+          {
+            "label": "更新时间",
+            "definition": "最近一次交付台账核对时间。",
+            "componentIds": [
+              "confirmed-cumulative"
+            ]
+          }
+        ],
+        "label": "交付确认记录",
+        "caveats": [
+          "已核验交付的汇总，存在待核验的批次。"
+        ]
+      }
+    },
+    "baidu_pending": {
+      "rows": [],
+      "source": {
+        "label": "内部交付统计",
+        "metricDefinitions": [
+          {
+            "label": "新增",
+            "definition": "按核对时的网盘清单，从有效 ZIP 名称中去除历史交付、本地记录、已有下载批次和重复项目。",
+            "componentIds": [
+              "baidu-pending"
+            ]
+          },
+          {
+            "label": "新增技术栈项目数",
+            "definition": "按技术栈统计的项目个数。",
+            "componentIds": [
+              "baidu-pending"
+            ]
+          },
+          {
+            "label": "更新时间",
+            "definition": "最近一次成功读取百度网盘清单的时间。",
+            "componentIds": [
+              "baidu-pending"
+            ]
+          }
+        ],
+        "caveats": [
+          "核对时间为百度网盘清单读取时间。接口未提供文件上传时间。"
+        ]
+      }
+    },
+    "today_delivery": {
+      "rows": [
+        {
+          "todayDelivered": 1189,
+          "date": "2026-11-26",
+          "checkedAt": "2026-11-26T14:59:00+08:00"
+        }
+      ],
+      "source": {
+        "label": "交付确认记录",
+        "metricDefinitions": [
+          {
+            "label": "今日交付",
+            "definition": "按北京时间当天实际交付日期统计已核验项目。",
+            "componentIds": [
+              "today-delivered"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "id": "dashboard:0d6745a9-e055-4576-820e-94b3321c8f6d",
+  "exportPreferences": {
+    "selected": null,
+    "destinations": []
+  }
+}
