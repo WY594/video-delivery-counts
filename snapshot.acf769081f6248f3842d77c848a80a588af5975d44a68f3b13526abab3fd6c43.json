@@ -1,0 +1,159 @@
+{
+  "title": "视频项目交付看板",
+  "surface": "dashboard",
+  "status": "reviewed",
+  "buildStatus": "complete",
+  "filters": [],
+  "queries": {
+    "confirmed_delivery": {
+      "rows": [
+        {
+          "cumulative": 9064,
+          "remotion": 1630,
+          "threejs": 5567,
+          "blender": 1364,
+          "cad": 503,
+          "checkedAt": "2026-11-26T17:00:28+08:00"
+        }
+      ],
+      "source": {
+        "metricDefinitions": [
+          {
+            "label": "累计交付",
+            "definition": "按项目去重后的已核验交付总数。",
+            "componentIds": [
+              "confirmed-cumulative"
+            ]
+          },
+          {
+            "label": "累计交付技术栈项目数",
+            "definition": "按技术栈统计的项目个数。",
+            "componentIds": [
+              "confirmed-cumulative"
+            ]
+          },
+          {
+            "label": "更新时间",
+            "definition": "最近一次交付台账核对时间。",
+            "componentIds": [
+              "confirmed-cumulative"
+            ]
+          }
+        ],
+        "label": "交付确认记录",
+        "caveats": [
+          "已核验交付的汇总，存在待核验的批次。"
+        ]
+      }
+    },
+    "baidu_pending": {
+      "rows": [],
+      "source": {
+        "label": "内部交付统计",
+        "metricDefinitions": [
+          {
+            "label": "新增",
+            "definition": "按核对时的网盘清单，从有效 ZIP 名称中去除历史交付、本地记录、已有下载批次和重复项目。",
+            "componentIds": [
+              "baidu-pending"
+            ]
+          },
+          {
+            "label": "新增技术栈项目数",
+            "definition": "按技术栈统计的项目个数。",
+            "componentIds": [
+              "baidu-pending"
+            ]
+          },
+          {
+            "label": "更新时间",
+            "definition": "最近一次成功读取百度网盘清单的时间。",
+            "componentIds": [
+              "baidu-pending"
+            ]
+          }
+        ],
+        "caveats": [
+          "核对时间为百度网盘清单读取时间。接口未提供文件上传时间。"
+        ]
+      }
+    },
+    "delivery_diversity": {
+      "rows": [],
+      "source": {
+        "label": "已交付项目分布",
+        "metricDefinitions": [
+          {
+            "label": "各维度项目数",
+            "definition": "按去重后的已交付项目计数。每个维度的项目数包含未知和缺失，合计等于所选技术栈的交付项目数。"
+          },
+          {
+            "label": "已识别",
+            "definition": "该维度中有可用统计结果的项目数。"
+          }
+        ]
+      }
+    },
+    "batch_delivery": {
+      "rows": [
+        {
+          "date": "2026-11-25",
+          "label": "1125",
+          "count": 1189
+        },
+        {
+          "date": "2026-11-24",
+          "label": "1124",
+          "count": 1829
+        },
+        {
+          "date": "2026-11-23",
+          "label": "1123",
+          "count": 1513
+        },
+        {
+          "date": "2026-11-22",
+          "label": "1122",
+          "count": 972
+        },
+        {
+          "date": "2026-11-21",
+          "label": "1121",
+          "count": 911
+        },
+        {
+          "date": "2026-11-20",
+          "label": "1120",
+          "count": 853
+        },
+        {
+          "date": "2026-11-19",
+          "label": "1119",
+          "count": 964
+        },
+        {
+          "date": null,
+          "label": "1116及之前",
+          "count": 833
+        }
+      ],
+      "source": {
+        "label": "甲方微盘批次与已确认交付记录",
+        "metricDefinitions": [
+          {
+            "label": "批次已交付",
+            "definition": "按甲方批次日统计首次确认交付的项目，批内和跨批重复只计一次。",
+            "componentIds": [
+              "customer-delivery-batches"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "id": "dashboard:0d6745a9-e055-4576-820e-94b3321c8f6d",
+  "exportPreferences": {
+    "selected": null,
+    "destinations": []
+  }
+}
